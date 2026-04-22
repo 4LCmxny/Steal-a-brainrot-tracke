@@ -8,25 +8,20 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    background: #0f0f0f;
     color: white;
     text-align: center;
   }
 
   header {
-    padding: 30px;
+    padding: 25px;
     background: #111;
-    box-shadow: 0 0 10px black;
+    border-bottom: 2px solid #00ff99;
   }
 
   h1 {
     margin: 0;
     color: #00ff99;
-    font-size: 38px;
-  }
-
-  p {
-    color: #ccc;
   }
 
   /* Tabs */
@@ -34,15 +29,13 @@
     display: flex;
     justify-content: center;
     background: #1a1a1a;
-    border-bottom: 2px solid #00ff99;
   }
 
   .tab {
     padding: 15px 20px;
     cursor: pointer;
-    transition: 0.2s;
     user-select: none;
-    color: white;
+    transition: 0.2s;
   }
 
   .tab:hover {
@@ -58,22 +51,19 @@
   /* Sections */
   .section {
     display: none;
-    padding: 30px;
+    padding: 25px;
   }
 
   .show {
     display: block;
   }
 
-  /* Cards */
   .card {
     background: #222;
     margin: 20px auto;
     padding: 20px;
-    width: 85%;
     max-width: 650px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #000;
+    border-radius: 12px;
   }
 
   ul {
@@ -84,21 +74,13 @@
 
   .btn {
     display: inline-block;
+    padding: 10px 18px;
     margin-top: 10px;
-    padding: 10px 20px;
     background: #00ff99;
     color: black;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: bold;
-  }
-
-  .btn:hover {
-    background: #00cc77;
-  }
-
-  .pro {
-    border: 2px solid #00ff99;
   }
 </style>
 </head>
@@ -107,49 +89,49 @@
 
 <header>
   <h1>🧠 Steal a Brainrot Hub</h1>
-  <p>Tips, tricks & pro gameplay strategies</p>
 </header>
 
 <!-- TABS -->
 <div class="tabs">
-  <div class="tab active" onclick="showTab('home', this)">Home</div>
-  <div class="tab" onclick="showTab('tips', this)">Tips</div>
-  <div class="tab" onclick="showTab('pro', this)">Pro Strategies</div>
-  <div class="tab" onclick="showTab('play', this)">Play</div>
+  <div class="tab active" onclick="openTab('home', this)">Home</div>
+  <div class="tab" onclick="openTab('tips', this)">Tips</div>
+  <div class="tab" onclick="openTab('pro', this)">Pro Strategies</div>
+  <div class="tab" onclick="openTab('play', this)">Play</div>
 </div>
 
 <!-- HOME -->
 <div id="home" class="section show">
   <div class="card">
-    <h2>👋 Welcome</h2>
-    <p>This is your Steal a Brainrot hub. Use the tabs to explore tips, tricks, and pro strategies.</p>
+    <h2>🔥 Play SAB now</h2>
+    <p>Get better at Steal a Brainrot by checking the Tips and Pro Strategies tabs.</p>
   </div>
 </div>
 
 <!-- TIPS -->
 <div id="tips" class="section">
   <div class="card">
-    <h2>⚡ Basic Tips</h2>
+    <h2>⚡ Tips to Steal Better Stuff</h2>
     <ul>
-      <li>Stay hidden before attacking anyone</li>
-      <li>Only steal when players are distracted or weak</li>
-      <li>Avoid rushing into big fights</li>
-      <li>Use baiting instead of chasing</li>
+      <li>👀 Watch players who are distracted fighting</li>
+      <li>💀 Only steal when enemies are low or weak</li>
+      <li>🎯 Don’t chase — wait and ambush instead</li>
+      <li>🧠 Learn map routes so you can escape fast</li>
+      <li>⚡ Stay unpredictable so players can’t track you</li>
     </ul>
   </div>
 </div>
 
-<!-- PRO STRATEGIES -->
+<!-- PRO -->
 <div id="pro" class="section">
-  <div class="card pro">
+  <div class="card">
     <h2>🏆 Pro Strategies</h2>
     <ul>
-      <li>💀 Third-party fights for easy steals</li>
-      <li>👀 Track high-value players silently</li>
-      <li>🎯 Fake retreats to lure enemies into traps</li>
-      <li>⚡ Use unpredictable movement patterns</li>
-      <li>🧠 Learn spawn locations for map control</li>
-      <li>🔥 Steal immediately after fights end (best timing)</li>
+      <li>💀 Third-party every fight instead of starting them</li>
+      <li>👀 Follow high-value players quietly until they fight</li>
+      <li>🎯 Fake leaving fights to bait enemies into chasing</li>
+      <li>⚡ Use zig-zag movement to dodge tracking</li>
+      <li>🧠 Memorize spawn points and camp smart zones</li>
+      <li>🔥 Steal instantly after fights end (best timing window)</li>
     </ul>
   </div>
 </div>
@@ -157,32 +139,23 @@
 <!-- PLAY -->
 <div id="play" class="section">
   <div class="card">
-    <h2>🎮 Play Roblox</h2>
-    <p>Jump into the game here:</p>
-    <a class="btn" href="https://www.roblox.com" target="_blank">Play Now</a>
+    <h2>🎮 Join Roblox now</h2>
+    <p>Click below to play:</p>
+    <a class="btn" href="https://www.roblox.com" target="_blank">Join Roblox</a>
   </div>
 </div>
 
 <!-- SCRIPT -->
 <script>
-function showTab(tabId, element) {
+function openTab(tabId, element) {
 
-  // hide all sections
   let sections = document.querySelectorAll(".section");
-  sections.forEach(sec => {
-    sec.classList.remove("show");
-  });
-
-  // remove active from all tabs
   let tabs = document.querySelectorAll(".tab");
-  tabs.forEach(tab => {
-    tab.classList.remove("active");
-  });
 
-  // show selected section
+  sections.forEach(s => s.classList.remove("show"));
+  tabs.forEach(t => t.classList.remove("active"));
+
   document.getElementById(tabId).classList.add("show");
-
-  // highlight clicked tab
   element.classList.add("active");
 }
 </script>
