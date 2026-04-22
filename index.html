@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Steal a Brainrot Hub</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: white;
+    text-align: center;
+  }
+
+  header {
+    padding: 30px;
+    background: #111;
+    box-shadow: 0 0 10px black;
+  }
+
+  h1 {
+    margin: 0;
+    color: #00ff99;
+    font-size: 38px;
+  }
+
+  p {
+    color: #ccc;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    background: #1a1a1a;
+    border-bottom: 2px solid #00ff99;
+  }
+
+  .tab {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+    color: white;
+  }
+
+  .tab:hover {
+    background: #00ff99;
+    color: black;
+  }
+
+  .active {
+    background: #00ff99;
+    color: black;
+  }
+
+  /* Sections */
+  .section {
+    display: none;
+    padding: 30px;
+  }
+
+  .show {
+    display: block;
+  }
+
+  /* Cards */
+  .card {
+    background: #222;
+    margin: 20px auto;
+    padding: 20px;
+    width: 85%;
+    max-width: 650px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+  }
+
+  ul {
+    text-align: left;
+    color: #ddd;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #00ff99;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+  .btn:hover {
+    background: #00cc77;
+  }
+
+  .pro {
+    border: 2px solid #00ff99;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🧠 Steal a Brainrot Hub</h1>
+  <p>Tips, tricks & pro gameplay strategies</p>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="showTab('home', this)">Home</div>
+  <div class="tab" onclick="showTab('tips', this)">Tips</div>
+  <div class="tab" onclick="showTab('pro', this)">Pro Strategies</div>
+  <div class="tab" onclick="showTab('play', this)">Play</div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="section show">
+  <div class="card">
+    <h2>👋 Welcome</h2>
+    <p>This is your Steal a Brainrot hub. Use the tabs to explore tips, tricks, and pro strategies.</p>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div id="tips" class="section">
+  <div class="card">
+    <h2>⚡ Basic Tips</h2>
+    <ul>
+      <li>Stay hidden before attacking anyone</li>
+      <li>Only steal when players are distracted or weak</li>
+      <li>Avoid rushing into big fights</li>
+      <li>Use baiting instead of chasing</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PRO STRATEGIES -->
+<div id="pro" class="section">
+  <div class="card pro">
+    <h2>🏆 Pro Strategies</h2>
+    <ul>
+      <li>💀 Third-party fights for easy steals</li>
+      <li>👀 Track high-value players silently</li>
+      <li>🎯 Fake retreats to lure enemies into traps</li>
+      <li>⚡ Use unpredictable movement patterns</li>
+      <li>🧠 Learn spawn locations for map control</li>
+      <li>🔥 Steal immediately after fights end (best timing)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PLAY -->
+<div id="play" class="section">
+  <div class="card">
+    <h2>🎮 Play Roblox</h2>
+    <p>Jump into the game here:</p>
+    <a class="btn" href="https://www.roblox.com" target="_blank">Play Now</a>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function showTab(tabId, element) {
+
+  // hide all sections
+  let sections = document.querySelectorAll(".section");
+  sections.forEach(sec => {
+    sec.classList.remove("show");
+  });
+
+  // remove active from all tabs
+  let tabs = document.querySelectorAll(".tab");
+  tabs.forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  // show selected section
+  document.getElementById(tabId).classList.add("show");
+
+  // highlight clicked tab
+  element.classList.add("active");
+}
+</script>
+
+</body>
+</html>
